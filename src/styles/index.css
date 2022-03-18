@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root > div > div {
+  height: 100vh;
+}
+#root > div {
+  transition: all 300ms linear;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Londrina Solid',"Allan","Jua", cursive;
+}
+a {
+  color: #b2ebf2;
+  cursor: pointer;
+  text-decoration: none;
+}
+html::-webkit-scrollbar {
+  width: 8px;
+}
+.chat::-webkit-scrollbar,
+.messages::-webkit-scrollbar {
+  width: 4px;
+  height: 5px;
+}
+html::-webkit-scrollbar-track,
+.chat::-webkit-scrollbar,
+.messages::-webkit-scrollbar {
+  border-radius: 10px;
+  background-color: rgb(52, 61, 70);
+}
+html::-webkit-scrollbar-thumb,
+.chat::-webkit-scrollbar,
+.messages::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 10px;
+}
+
+.dark {
+  background-color: rgb(20 23 31);
+  color: white;
+}
+
+.light {
+  background-color: rgb(239 239 241);
+  color: #5f5f5f;
+}
+
+.dark footer,
+.dark nav,
+.dark #submenu,
+.dark .sidebar,
+.dark .items > div,
+.dark .filter,
+.dark .bio,
+.dark .profile,
+.dark .loading {
+  background-color: rgb(13 16 23);
+  color: #8f8f8f;
+  box-shadow: 0px 0px 20px black;
+}
+
+.light footer,
+.light nav,
+.light #submenu,
+.light .sidebar,
+.light .items > div,
+.light .filter,
+.light .profile,
+.light .loading {
+  background-color: white;
+  color: #5f5f5f;
+}
+
+.btn {
+  border: solid;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 200ms linear;
+  width: fit-content;
+  text-transform: capitalize;
+}
+svg {
+  cursor: pointer;
+  font-size: 30px;
+}
+.btn:hover,
+.input:hover,
+svg:hover {
+  color: rgba(255, 20, 145, 0.801);
+}
+.solid {
+  background-color: #ffb2dacc;
+}
+.input {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: solid;
+  padding: 10px;
+  column-gap: 5px;
+  font-weight: 700;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  max-width: 400px;
+}
+
+.input > input {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  color: rgba(255, 20, 145, 0.801);
+  font-weight: 700;
+  flex: auto;
+}
+
+.btn svg,
+.input svg {
+  font-size: 20px;
+}
+
+.radio {
+  display: flex;
+  column-gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-around;
+}
+.radio > span {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  align-items: center;
+  font-weight: 700;
+  flex: 50%;
+}
+.radio > span > span {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: solid;
+}
+
+.file {
+  position: relative;
+  transform: translateX(-10px);
+}
+.file > input {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  z-index: 4;
+  cursor: pointer;
+}
+.file > svg {
+  position: absolute;
+}
+
+@keyframes eror {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.eror {
+  animation: eror infinite 1.5s;
+}
+
+.textarea > textarea {
+  background-color: transparent;
+  padding: 15px;
+  border: 0px;
+  outline: 0px;
+  min-height: 100px;
+  height: 100px;
+  color: rgba(255, 20, 145, 0.801);
+  font-weight: 700;
+  resize: none;
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.loading > svg {
+  font-size: 100px;
+  animation: load infinite 2300ms;
+}

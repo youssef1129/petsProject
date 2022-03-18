@@ -1,0 +1,42 @@
+.newcat {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newcat > svg {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+.newcat img {
+  width: 180px;
+  border-radius: 30px;
+}
+
+.newcat > form > div:last-child {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  min-width: 280px;
+  min-width: -webkit-fill-available;
+}
+
+.newcat > form > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  align-items: center;
+  width: -webkit-fill-available;
+}
+
+progress {
+  width: 100%;
+}
+
+
+@media screen and (min-width:780px) {
+  .newcat {
+    padding: 5rem;
+  }
+}

@@ -1,0 +1,134 @@
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 3rem;
+  row-gap: 1.5rem;
+  padding: 4rem;
+  min-height: 80vh;
+}
+
+.pet {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
+  row-gap: 10px;
+  box-shadow: 0px 0px 20px #2a2a2a7d;
+  transition: all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+@keyframes petanim {
+  0% {transform: rotate(10deg)}
+  50% {transform: rotate(-10deg);}
+  100% {transform: rotate(10deg);}
+}
+
+.pet:hover{
+  animation: petanim 1s;
+}
+
+.pet > img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  min-height: 400px;
+}
+.cstmrgn {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+#like,#dislike {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+#dislike{
+  color: #e60a0a;
+}
+#like > svg,#dislike>svg {
+  padding: 4px;
+}
+#like > svg:hover {
+  color: #e60a0a;
+  border-radius: 100%;
+  background-color: rgba(255, 0, 0, 0.418);
+}
+#dislike > svg:hover {
+  color: #f08c8c;
+  border-radius: 100%;
+  background-color: rgba(255, 0, 0, 0.418);
+}
+
+.cnt56 {
+}
+.filter {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.cnt56 > .btn {
+  margin: 20px auto 0px auto;
+}
+
+@media screen and (min-width: 760px) {
+  .cnt56 > .btn {
+    display: none;
+  }
+
+  .cnt56 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .items {
+    grid-column: 1/-3;
+    grid-row: 1/-2;
+  }
+  .cstmrgn {
+    grid-column: 1/-1;
+  }
+
+  .filter {
+    grid-column: 11/-1;
+    grid-row: 1/-2;
+    right: 0;
+    border-radius: 30px 0px 0px 30px;
+    position: fixed;
+    top: 14%;
+    height: 70%;
+    box-shadow: 0px 0px 20px;
+    padding: 20px;
+    min-width: 200px;
+  }
+  #back2{
+    display: none;
+  }
+}
+
+@media screen and (max-width:760px) {
+  .filter{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 7;
+    transition: all 300ms linear;
+    
+  }
+  #back2{
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+
+  .show{
+    transform: translateX(0) !important;
+  }
+  .hide{
+    transform: translateX(100%) !important;
+  }
+}

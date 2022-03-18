@@ -1,0 +1,143 @@
+#cnt312 > svg {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+
+#cnt312 {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.chat {
+  flex: auto;
+  display: flex;
+  overflow: auto;
+  align-items: center;
+}
+
+#cnt312 img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.chat > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  column-gap: 5px;
+  padding: 7px;
+  border-radius: 20px;
+  align-items: center;
+  cursor: pointer;
+  background: #80808005;
+  margin: 3px;
+}
+.chat > div:hover {
+  background-color: rgba(128, 128, 128, 0.466);
+}
+.conversation {
+  height: 85%;
+  flex: auto;
+  padding: 1rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: solid;
+  border-radius: 30px;
+}
+.conversation>div:last-child{
+  display: flex;
+  justify-content: center;
+}
+.conversation input {
+  flex: auto;
+}
+.conversation > div:first-child {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+  height: -webkit-fill-available;
+  flex: 10%;
+}
+.conversation > div:first-child>div {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+}
+.messages {
+  place-self: flex-end;
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  align-items: end;
+  width: 100%;
+}
+.message {
+  display: flex;
+  justify-items: end;
+  align-items: center;
+  margin: 10px 8px 10px 5px;
+  column-gap: 4px;
+}
+.me {
+  flex-direction: row-reverse;
+}
+.me p {
+  background-color: #3949ab !important;
+  border-radius: 10px 10px 0px 10px !important;
+}
+
+.messages p {
+  color: white;
+  word-break: break-all;
+  padding: 10px;
+  background-color: #ab9739;
+  border-radius: 10px 10px 10px 0px;
+}
+
+.deleteConv{
+  color: #e83b3b;
+  margin-left: auto;
+}
+
+@keyframes typings {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#typing {
+  animation: typings 2s infinite;
+  margin-left: auto;
+}
+@media screen and (min-width: 760px) {
+  #cnt312 {
+    flex-direction: row;
+  }
+  .conversation {
+    height: auto;
+    flex: 90%;
+    padding: 1rem 3rem 1rem 3rem;
+  }
+  .chat {
+    flex: 10%;
+    flex-direction: column;
+  }
+  #cnt312 img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+}
